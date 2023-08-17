@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-processing-deployment
+spec:
+  replicas: 3  # Adjust as needed
+  selector:
+    matchLabels:
+      app: data-processing
+  template:
+    metadata:
+      labels:
+        app: data-processing
+    spec:
+      containers:
+        - name: data-processing-container
+          image: your-repo/data-processing-image:latest  # Use the image you built
